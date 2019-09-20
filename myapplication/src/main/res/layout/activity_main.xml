@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="18dp"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/edit"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginRight="345dp"
+        android:src="@mipmap/guanbi" />
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginLeft="328dp"
+        android:layout_marginTop="34dp"
+        android:text="注册"
+        android:textColor="#ff1c1919"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="168dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginRight="190dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你好，"
+            android:textColor="#ff1c1919"
+            android:textSize="23sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="欢迎来到要FUN"
+            android:textColor="#ff1c1919"
+            android:textSize="23sp" />
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="227dp"
+        android:hint="@string/app_account"
+        android:inputType="phone"
+        android:textColor="#ff1c1919"
+        android:textSize="15sp" />
+
+    <!--<ImageView-->
+        <!--android:layout_width="375dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="264dp"-->
+        <!--android:src="@drawable/xiahua" />-->
+
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="278dp"
+        android:layout_marginBottom="363dp"
+        android:hint="@string/app_password"
+        android:textSize="15sp" />
+
+    <!--<ImageView-->
+        <!--android:layout_width="375dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="335dp"-->
+        <!--android:layout_marginBottom="348dp"-->
+        <!--android:src="@drawable/xiahuas" />-->
+
+    <ImageView
+        android:id="@+id/watch"
+        android:layout_width="18dp"
+        android:layout_height="11dp"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginBottom="270dp"
+        android:background="@drawable/eyes" />
+
+    <TextView
+        android:id="@+id/froget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="310dp"
+        android:layout_marginTop="343dp"
+        android:layout_marginBottom="320dp"
+        android:text="忘记密码"
+        android:textColor="#ff929191"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/activity_go"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginBottom="247dp"
+        android:background="@drawable/yuan"
+        android:text="@string/app_login"
+        android:textColor="@color/colorwhite"
+        android:textSize="13dp" />
+
+    <TextView
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="475dp"
+        android:layout_marginRight="151dp"
+        android:layout_marginBottom="121dp"
+        android:text="其他登录方式"
+        android:textColor="#ffc3c1c1"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/wechat"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_marginLeft="164dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginRight="164dp"
+        android:layout_marginBottom="60dp"
+        android:src="@mipmap/weixin" />
+</RelativeLayout>

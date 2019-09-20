@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">要 Fun</string>
+    <string name="app_password">请输入密码</string>
+    <string name="app_account">请输入账号</string>
+    <string name="app_phone">请输入手机号</string>
+    <string name="app_verify">请输入验证码</string>
+    <string name="app_froget">忘记密码</string>
+    <string name="app_login">登陆</string>
+
+</resources>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="18dp"
+    android:orientation="vertical"
+    tools:context=".activity.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/froget_edits"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginRight="345dp"
+        android:layout_marginBottom="621dp"
+        android:src="@mipmap/guanbi" />
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginLeft="328dp"
+        android:layout_marginTop="34dp"
+        android:text="登陆"
+        android:textColor="#ff1c1919"
+        android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="91dp"
+        android:layout_marginRight="264dp"
+        android:layout_marginBottom="555dp"
+        android:text="注册"
+        android:textColor="#ff1c1919"
+        android:textSize="23sp" />
+
+    <!--<TextView-->
+    <!--android:id="@+id/get_code"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_marginTop="170dp"-->
+    <!--android:layout_marginRight="16dp"-->
+    <!--android:layout_marginBottom="422dp"-->
+    <!--android:text="获取验证码"-->
+    <!--android:textColor="#ff929191"-->
+    <!--android:textSize="15sp" />-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
+        android:layout_marginBottom="463dp">
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/app_phone"
+            android:inputType="phone"
+            android:maxLength="13"
+            android:singleLine="true"
+            android:textColor="@color/colorblack"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/get_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="获取验证码"
+            android:textColor="#ff929191"
+            android:textSize="15sp" />
+        <!--<TextView-->
+        <!--android:id="@+id/froget_code"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="284dp"-->
+        <!--android:layout_marginTop="190dp"-->
+        <!--android:layout_marginBottom="462dp"-->
+        <!--android:text="获取验证码"-->
+        <!--android:textColor="#ff929191-->
+    </RelativeLayout>
+
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="227dp"-->
+    <!--android:layout_marginBottom="448dp"-->
+    <!--android:src="@drawable/xiahua" />-->
+
+    <EditText
+        android:id="@+id/et_identifiing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="261dp"
+        android:layout_marginBottom="398dp"
+        android:hint="@string/app_verify"
+        android:textColor="@color/colorblack"
+        android:textSize="15sp" />
+
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:layout_marginTop="298dp"-->
+    <!--android:layout_marginBottom="383dp"-->
+    <!--android:src="@drawable/xiahua" />-->
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:layout_marginBottom="333dp"
+        android:hint="@string/app_password"
+        android:textColor="@color/colorblack"
+        android:textSize="15sp" />
+
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:layout_marginTop="357dp"-->
+    <!--android:layout_marginBottom="318dp"-->
+    <!--android:src="@drawable/diamonds" />-->
+
+    <CheckBox
+        android:id="@+id/box"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginRight="304dp"
+        android:layout_marginBottom="261dp"
+        android:checked="true" />
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginRight="170dp"
+        android:layout_marginBottom="270dp"
+        android:text="我已阅读《要FUN用户协议》"
+        android:textColor="#ff929191"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/red_speak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="393dp"
+        android:text="请输入正确的手机号"
+        android:textColor="@color/colorred"
+        android:textSize="12sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/froget_yes"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="422dp"
+        android:layout_marginBottom="236dp"
+        android:background="@drawable/yuan"
+        android:text="立即注册"
+        android:textColor="@color/colorwhite"
+        android:textSize="13dp" />
+
+</RelativeLayout>
