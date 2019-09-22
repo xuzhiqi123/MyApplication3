@@ -1,4 +1,4 @@
-package com.example.myapplication.bean;
+package com.balala.myapplication.bean;
 
 public class Identifying extends AllBean {
 

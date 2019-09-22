@@ -56,4 +56,8 @@ dependencies {
     //eventbus
     implementation 'org.greenrobot:eventbus:3.0.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+
+    // 微信登陆
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.3.1'
+
 }

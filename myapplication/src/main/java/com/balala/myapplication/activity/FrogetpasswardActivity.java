@@ -1,4 +1,4 @@
-package com.example.myapplication.activity;
+package com.balala.myapplication.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.MainActivity;
+import com.balala.myapplication.MainActivity;
 import com.example.myapplication.R;
 
 public class FrogetpasswardActivity extends AppCompatActivity {

@@ -18,17 +18,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".webview.AboutyaofunActivity"></activity>
-        <activity android:name=".activity.WXEntryActivity" />
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.FrogetpasswardActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.balala.myapplication.webview.AboutyaofunActivity" />
+        <activity android:name="com.balala.myapplication.activity.RegisterActivity" />
+        <activity android:name="com.balala.myapplication.activity.FrogetpasswardActivity" />
+        <activity android:name="com.balala.myapplication.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- wxpay-->
+        <activity
+            android:name="com.balala.myapplication.activity.wxapi.WXEntryActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="true"
+            android:taskAffinity="net.sourceforge.simcpux"
+            android:launchMode="singleTask">
+        </activity>
+
     </application>
 
 </manifest>

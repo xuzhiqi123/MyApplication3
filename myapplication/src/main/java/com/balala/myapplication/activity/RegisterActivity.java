@@ -1,4 +1,4 @@
-package com.example.myapplication.activity;
+package com.balala.myapplication.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,13 +18,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.MainActivity;
+import com.balala.myapplication.util.TextWatcherUtil;
+import com.balala.myapplication.MainActivity;
+import com.balala.myapplication.bean.Identifying;
+import com.balala.myapplication.util.MyService;
+import com.balala.myapplication.util.Utils;
+import com.balala.myapplication.webview.AboutyaofunActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.bean.Identifying;
-import com.example.myapplication.util.MyService;
-import com.example.myapplication.util.TextWatcherUtil;
-import com.example.myapplication.util.Utils;
-import com.example.myapplication.webview.AboutyaofunActivity;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -59,6 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView mRedSpeak;
     private String phone;
     private OkHttpClient mOkHttpClient;
+    private String phoneNum;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,38 +96,32 @@ public class RegisterActivity extends AppCompatActivity {
         mFrogetEdits.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+//                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                finish();
             }
         });
 
 
         //点击 获取验证码 进行以下操作
-        et_identifiing.setOnClickListener(new View.OnClickListener() {
+        mFrogetCode.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
                 //比较手机号是否符合规则 符合规则弹出"获取验证码"并且验证码开始倒计时，红色文字隐藏
-                String phoneNum = et_identifiing.getText().toString().trim();
-                //切割字符串将空格清除
-                String[] split = phoneNum.split(" ");
-                //重新拼接手机号
-                phone = split[0] + split[1] + split[2];
-                Log.e("手机号码：", phone);
-                if (phone.matches("^13[0-9]{1}[0-9]{8}$|15[0125689]{1}[0-9]{8}$|18[0-3,5-9]{1}[0-9]{8}$|17[0-3,5-9]{1}[0-9]{8}$|19[0-3,5-9]{1}[0-9]{8}$")) {
-                    Toast.makeText(RegisterActivity.this, "获取验证码", Toast.LENGTH_SHORT).show();
-                    time.start();
-                    mRedSpeak.setVisibility(View.GONE);
-                    Log.i(TAG, "手机号码 " + phone);
-//                    initData();// 获取手机号码 返回后台进行解析
-                    // 如果手机号码不符合规则 提示用户正确输入手机号 红色文字显示 字体变成"请输入正确的手机号码"
-                    //
+                phoneNum = et_phone.getText().toString().trim();
+                // 判断手机号为空或者小于11位时 也可以点击
+                if (phoneNum.isEmpty()) {
+
+                    Toast.makeText(RegisterActivity.this, "请输入正确的手机号码", Toast.LENGTH_SHORT).show();
+
                 } else {
-                    Toast.makeText(RegisterActivity.this, " 请输入正确的手机号码", Toast.LENGTH_SHORT).show();
-                    mRedSpeak.setVisibility(View.VISIBLE);
-                    mRedSpeak.setText("请输入正确的手机号码");
+                    // 这个方法是用来判断手机验证码相关的
+                    initCode();
                 }
 
-
             }
+
 
         });
 
@@ -135,7 +131,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void callback() {
                 //todo edittext changed后回调
-                initData();
+
             }
         });
         //验证密码
@@ -155,29 +151,28 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-//
-//    private void initCodeData() {
-//        //验证码判断为空也不会报错
-////        if (phone.length() <= 0 || phone.length() > 13) {
-////            Toast.makeText(RegisterActivity.this, "请填写正确的手机号", Toast.LENGTH_SHORT).show();
-////        }
-//
-//        //重新判断手机号是否规范 （matches 正则的规则）
-//        if (phone.matches("^13[0-9]{1}[0-9]{8}$|15[0125689]{1}[0-9]{8}$|18[0-3,5-9]{1}[0-9]{8}$|17[0-3,5-9]{1}[0-9]{8}$|19[0-3,5-9]{1}[0-9]{8}$")) {
-//            Toast.makeText(RegisterActivity.this, "获取验证码", Toast.LENGTH_SHORT).show();
-//            time.start();
-//            mRedSpeak.setVisibility(View.GONE);
-//            Log.i(TAG, "手机号码 " + phone);
-//
-//            // 如果手机号码不符合规则 提示用户正确输入手机号 红色文字显示 字体变成"请输入正确的手机号码"
-//            //
-//        } else {
-//            Toast.makeText(RegisterActivity.this, " 请输入正确的手机号码", Toast.LENGTH_SHORT).show();
-//            mRedSpeak.setVisibility(View.VISIBLE);
-//            mRedSpeak.setText("请输入正确的手机号码");
-//        }
-//        initData();// 获取手机号码 返回后台进行解析
-//    }
+    private void initCode() {
+        //切割字符串将空格清除
+        String[] split = phoneNum.split(" ");
+        //重新拼接手机号
+        phone = split[0] + split[1] + split[2];
+        Log.e("手机号码：", phone);
+        // 判断输入的手机号 是否符合手机号规范
+        if (phone.matches("^13[0-9]{1}[0-9]{8}$|15[0125689]{1}[0-9]{8}$|18[0-3,5-9]{1}[0-9]{8}$|17[0-3,5-9]{1}[0-9]{8}$|19[0-3,5-9]{1}[0-9]{8}$")) {
+            Toast.makeText(RegisterActivity.this, "获取验证码", Toast.LENGTH_SHORT).show();
+            time.start();
+            mRedSpeak.setVisibility(View.GONE);
+            Log.i(TAG, "手机号码 " + phone);
+            initData();
+//                    initData();// 获取手机号码 返回后台进行解析
+            // 如果手机号码不符合规则 提示用户正确输入手机号 红色文字显示 字体变成"请输入正确的手机号码"
+        } else {
+            Toast.makeText(RegisterActivity.this, " 请输入正确的手机号码", Toast.LENGTH_SHORT).show();
+            mRedSpeak.setVisibility(View.VISIBLE);
+            mRedSpeak.setText("请输入正确的手机号码");
+        }
+
+    }
 
     // 倒计时 验证码
 
@@ -264,14 +259,15 @@ public class RegisterActivity extends AppCompatActivity {
                     .connectTimeout(15, TimeUnit.SECONDS)
                     .addNetworkInterceptor(logInterceptor)
                     .build();    // 解析没有成功 所以解不出来
-        }    // 加载的内容出不来 这个可可可咋办 天啊 我今天算是啥啥都没干 真难 天啊 我咋啥都忘
+        }
+
         return mOkHttpClient;    //把手机号码 返回到后台解析 再把验证码发送到手机
     }
 
     private void initData() {
         Toast.makeText(this, "我这里是验证码发送到用户短信", Toast.LENGTH_SHORT).show();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://test.yaofun.vip/api/verification_code/")
+                .baseUrl("https://test.yaofun.vip/api/verification_code/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(okhttpclient())

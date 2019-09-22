@@ -1,11 +1,9 @@
-package com.example.myapplication.util;
+package com.balala.myapplication.util;
 
 import android.text.TextUtils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.security.Signature;
-import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

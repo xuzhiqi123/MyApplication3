@@ -1,4 +1,4 @@
-package com.example.myapplication.webview;
+package com.balala.myapplication.webview;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.myapplication.R;
+
 
 public class AboutyaofunActivity extends AppCompatActivity {
 

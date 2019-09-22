@@ -1,6 +1,4 @@
-package com.example.myapplication.bean;
-
-import androidx.annotation.NonNull;
+package com.balala.myapplication.bean;
 
 public class AllBean {
 
